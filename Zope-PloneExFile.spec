@@ -25,11 +25,8 @@ Typ Plone z za³±cznikami.
 %prep
 %setup -q -n %{zope_subname}
 
-%build
-
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 cp -af Extensions i18n skins website *.py *.txt \
