@@ -2,12 +2,12 @@
 Summary:	A Plone content type with an attachment
 Summary(pl):	Typ Plone z za³±cznikami
 Name:		Zope-%{zope_subname}
-Version:	3.01
+Version:	3.02
 Release:	1
 License:	ZPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/ingeniweb/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	4714bc9571ea2e512f74663619b84a36
+# Source0-md5:	3e23b7fe5e365bfad5ba3dcfa753ab85
 URL:		http://sourceforge.net/projects/ingeniweb/
 %pyrequires_eq	python-modules
 Requires:	Zope
