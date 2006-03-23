@@ -9,10 +9,11 @@ Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/ingeniweb/%{zope_subname}-%{version}.tar.gz
 # Source0-md5:	3e23b7fe5e365bfad5ba3dcfa753ab85
 URL:		http://sourceforge.net/projects/ingeniweb/
+BuildRequires:	rpmbuild(macros) >= 1.268
 %pyrequires_eq	python-modules
+Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope
 Requires:	Zope-ZAttachmentAttribute >= 2.0
-Requires(post,postun):	/usr/sbin/installzopeproduct
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,16 +41,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/sbin/installzopeproduct %{_datadir}/%{name} %{zope_subname}
-if [ -f /var/lock/subsys/zope ]; then
-	/etc/rc.d/init.d/zope restart >&2
-fi
+%service -q zope restart
 
 %postun
 if [ "$1" = "0" ]; then
 	/usr/sbin/installzopeproduct -d %{zope_subname}
-	if [ -f /var/lock/subsys/zope ]; then
-		/etc/rc.d/init.d/zope restart >&2
-	fi
+	%service -q zope restart
 fi
 
 %files
