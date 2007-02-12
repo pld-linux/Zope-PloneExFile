@@ -1,6 +1,6 @@
 %define		zope_subname	PloneExFile
 Summary:	A Plone content type with an attachment
-Summary(pl.UTF-8):   Typ Plone z załącznikami
+Summary(pl.UTF-8):	Typ Plone z załącznikami
 Name:		Zope-%{zope_subname}
 Version:	3.02
 Release:	1
