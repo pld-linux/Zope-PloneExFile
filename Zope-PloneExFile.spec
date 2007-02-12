@@ -1,6 +1,6 @@
 %define		zope_subname	PloneExFile
 Summary:	A Plone content type with an attachment
-Summary(pl):	Typ Plone z za³±cznikami
+Summary(pl.UTF-8):   Typ Plone z zaÅ‚Ä…cznikami
 Name:		Zope-%{zope_subname}
 Version:	3.02
 Release:	1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A Plone content type with an attachment.
 
-%description -l pl
-Typ Plone z za³±cznikami.
+%description -l pl.UTF-8
+Typ Plone z zaÅ‚Ä…cznikami.
 
 %prep
 %setup -q -n %{zope_subname}
